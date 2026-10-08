@@ -1,0 +1,7 @@
+node_modules
+dist
+public/latex
+src/pdf/latex-api.js
+.DS_Store
+result
+*.tsbuildinfo

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>latex-wasm</title>
+    <style>
+      body {
+        font-family: ui-monospace, monospace;
+        margin: 2rem;
+        max-width: 900px;
+      }
+      textarea {
+        width: 100%;
+        box-sizing: border-box;
+        min-height: 12rem;
+        font: inherit;
+      }
+      button {
+        font: inherit;
+        padding: 0.4rem 1rem;
+        margin-top: 0.5rem;
+      }
+      #status {
+        margin-top: 0.5rem;
+        white-space: pre-wrap;
+      }
+      #log {
+        margin-top: 0.5rem;
+        white-space: pre-wrap;
+        color: #444;
+        font-size: 0.85rem;
+        max-height: 12rem;
+        overflow: auto;
+      }
+      iframe {
+        width: 100%;
+        height: 70vh;
+        border: 1px solid #ccc;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>latex-wasm</h1>
+    <textarea id="editor"></textarea>
+    <br />
+    <button id="build">Build PDF</button>
+    <button id="load-smoke">Load smoke test</button>
+    <div id="status"></div>
+    <div id="log"></div>
+    <iframe id="pdf"></iframe>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

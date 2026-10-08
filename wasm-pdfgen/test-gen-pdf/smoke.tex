@@ -1,0 +1,47 @@
+\documentclass[a4paper]{article}
+\usepackage{color,gnos,adjustbox}
+\newsavebox{\puzzleBoard}
+\newcommand{\puzzleDiagram}[4]{%
+  \par\noindent\begin{minipage}{\linewidth}\centering
+    #1\strut\par
+    \ifx\relax#2\relax\else{\small #2\strut\par}\fi
+    \vspace{0.5\baselineskip}%
+    \gnosfontsize{12}%
+    \sbox{\puzzleBoard}{\begin{varwidth}{80in}\gnos #3\end{varwidth}}%
+    \adjustbox{max width=\linewidth}{\parbox{\wd\puzzleBoard}{\centering
+      \usebox{\puzzleBoard}%
+      \ifx\relax#4\relax\else\par\vspace{6pt}\itshape #4\fi}}\par
+  \end{minipage}\par\vspace{\baselineskip}}
+\newcommand{\puzzleHeading}[1]{\begin{center}\Large\bfseries #1\end{center}}\usepackage{geometry}
+\geometry{top=1cm,left=1cm,right=1cm,bottom=2cm,footskip=1cm}\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[L]{Smoke Test Collection}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\usepackage{multicol}
+\setlength{\columnsep}{0.5cm}
+\begin{document}
+\puzzleHeading{Smoke Test Collection}
+\begin{multicols}{2}
+
+\puzzleDiagram{Problem 1}{Black to kill}{<@(@!@((((((((((((>\\
+!!!!!@++++++++++++]\\
+@@@@@@++++++++++++]\\
+\char91++*+++++*+++++*++]}{}
+
+\end{multicols}
+
+\clearpage
+\puzzleHeading{Solutions}
+\begin{multicols}{2}
+
+\puzzleDiagram{Problem 1 Solution}{}{\gnosOverlap{!}{\footnotesize{2}}@\gnosOverlap{@}{\color{white}\footnotesize{1}}@!@((((((((((((>\\
+!!!!!@++++++++++++]\\
+@@@@@@++++++++++++]\\
+\char91++*+++++*+++++*++]}{3 at 1}
+
+\end{multicols}
+
+\end{document}

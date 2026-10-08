@@ -1,0 +1,46 @@
+{
+  "nodes": {
+    "latex-wasm": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-HC+PfPvLOxZ3yBEY5hhHYLnrGH9+4d1/9g5GeO9rZho=",
+        "path": "./wasm-pdfgen",
+        "type": "path"
+      },
+      "original": {
+        "path": "./wasm-pdfgen",
+        "type": "path"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1791426274,
+        "narHash": "sha256-MWhktfFtFE8Jl7bf9Pkp7TR5MSdYCjCswSo0Gkb4ywc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "7c8764b7c7b09b34f632464276218ef9090eaa11",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-26.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "latex-wasm": "latex-wasm",
+        "nixpkgs": [
+          "latex-wasm",
+          "nixpkgs"
+        ]
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

@@ -1,0 +1,7 @@
+dist
+result
+public
+wasm-pdfgen
+package-lock.json
+flake.lock
+src/pdf/latex-api.js
