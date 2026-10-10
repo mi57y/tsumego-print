@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Box, Button, Container, Link, Typography } from "@mui/material";
+import GitHub from "@mui/icons-material/GitHub";
 import {
   Link as RouterLink,
   Outlet,
@@ -54,13 +55,25 @@ export default function AppLayout() {
               Tsumego Print
             </Link>
           </Typography>
-          <Button
-            variant="outlined"
-            size="small"
-            onClick={() => setAboutOpen(true)}
-          >
-            About
-          </Button>
+          <Box sx={{ display: "flex", gap: 1 }}>
+            <Button
+              variant="outlined"
+              size="small"
+              startIcon={<GitHub />}
+              href="https://github.com/mi57y/tsumego-print"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Source code
+            </Button>
+            <Button
+              variant="outlined"
+              size="small"
+              onClick={() => setAboutOpen(true)}
+            >
+              About
+            </Button>
+          </Box>
         </Container>
       </Box>
       <Outlet />
