@@ -1,6 +1,6 @@
 # latex-wasm
 
-A module for compiling LaTeX to PDF locally in the browser, with texlive compiled to WebAssembly.
+A module for compiling LaTeX to PDF locally in the browser, with pdfTeX from TeX Live compiled to WebAssembly.
 
 ```js
 const compiler = new LatexCompiler();
@@ -15,7 +15,7 @@ While other ready solutions for compiling LaTeX in the browser exist, this one:
 
 - packages an easily customizable list of required packages into a single compressed download
 - can include packages that are **not on CTAN**
-- builds reproducibly with Nix, natively on both Linux and macOS
+- builds reproducibly with [Nix](https://nixos.org), natively on both Linux and macOS
 
 ## Customizing packages
 
@@ -24,9 +24,9 @@ that will be available in the compiler.
 You can use standard CTAN packages from `pkgs.texlive.pkgs`
 or pass a custom package created as described in the
 [nixpkgs reference](https://nixos.org/manual/nixpkgs/stable/#sec-language-texlive-custom-packages)
-(see gnos in this project for an example).
+(see [`packages/gnos`](./packages/gnos/default.nix), which packages [go-type1](https://github.com/otrego/go-type1), for an example).
 
-```
+```nix
 gnos = import ./packages/gnos { inherit pkgs; };
 
 latex-packages = [ gnos ] ++ (with pkgs.texlive.pkgs; [
