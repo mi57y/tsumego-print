@@ -1,12 +1,6 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  IconButton,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Dialog, DialogContent, DialogTitle, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import AboutDialogContent from "./AboutDialogContent";
 
 type AboutDialogProps = {
   open: boolean;
@@ -29,15 +23,7 @@ export default function AboutDialog({ open, onClose }: AboutDialogProps) {
         </IconButton>
       </DialogTitle>
       <DialogContent>
-        <Stack spacing={1}>
-          <Typography>
-            All PDF generation on this website happens client side. Problem
-            collections listed on the website are loaded by your browser
-            directly from online-go.com via their API. They are not stored by or
-            provided by tsumego-print server. This website has no backend of its
-            own and does not process your personal information.
-          </Typography>
-        </Stack>
+        <AboutDialogContent />
       </DialogContent>
     </Dialog>
   );

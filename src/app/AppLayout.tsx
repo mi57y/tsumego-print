@@ -7,7 +7,7 @@ import {
   useNavigate,
   useNavigationType,
 } from "react-router";
-import AboutDialog from "./AboutDialog";
+import AboutDialog from "./about_dialog/AboutDialog";
 import { LANDING_PATH, SELECT_COLLECTION_PATH } from "./routes";
 import { usePrintSession } from "./PrintSession";
 
