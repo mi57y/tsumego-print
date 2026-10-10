@@ -1,4 +1,4 @@
-import { Stack, Typography } from "@mui/material";
+import { Link, Stack, Typography } from "@mui/material";
 
 export default function AboutDialogContent() {
   return (
@@ -10,6 +10,18 @@ export default function AboutDialogContent() {
         from online-go.com via their API. They are not stored by or provided by
         tsumego-print server. This website has no backend of its own and does
         not process your personal information.
+      </Typography>
+      <Typography>
+        This app is licensed under AGPL (v3 or later) and made possible by other
+        free software under various licenses. Please check{" "}
+        <Link
+          href="https://github.com/mi57y/tsumego-print"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          README on Github
+        </Link>{" "}
+        for details.
       </Typography>
     </Stack>
   );
