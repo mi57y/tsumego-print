@@ -1,5 +1,7 @@
 # Tsumego Print
 
+## Live page: [tsumego-print.mi57y.pl](https://tsumego-print.mi57y.pl)
+
 Create customizable, printable PDF collections of Go problems (tsumego) from [Online-Go](https://online-go.com) puzzle collections or SGF files.
 
 Everything runs in the browser: the app generates a LaTeX file and compiles it to PDF with a WebAssembly build of pdfTeX.
