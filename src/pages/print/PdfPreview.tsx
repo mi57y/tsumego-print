@@ -50,6 +50,7 @@ export default function PdfPreview({
           ) : (
             <>
               <Box
+                key={url}
                 component="iframe"
                 title="Puzzles PDF preview"
                 src={url}
