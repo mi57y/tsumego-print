@@ -6,7 +6,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-HC+PfPvLOxZ3yBEY5hhHYLnrGH9+4d1/9g5GeO9rZho=",
+        "narHash": "sha256-AzCgjQYKhj+CBDkYKOtQWG8cAUNkNTykchs0MV78VQA=",
         "path": "./wasm-pdfgen",
         "type": "path"
       },
