@@ -1,13 +1,20 @@
+import type { ReactNode } from "react";
 import { Dialog, DialogContent, DialogTitle, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import AboutDialogContent from "./AboutDialogContent";
 
-type AboutDialogProps = {
+type InfoDialogProps = {
+  title: ReactNode;
   open: boolean;
   onClose: () => void;
+  children: ReactNode;
 };
 
-export default function AboutDialog({ open, onClose }: AboutDialogProps) {
+export default function InfoDialog({
+  title,
+  open,
+  onClose,
+  children,
+}: InfoDialogProps) {
   return (
     <Dialog open={open} onClose={onClose} fullWidth maxWidth="sm">
       <DialogTitle
@@ -17,14 +24,12 @@ export default function AboutDialog({ open, onClose }: AboutDialogProps) {
           justifyContent: "space-between",
         }}
       >
-        About
+        {title}
         <IconButton aria-label="close" onClick={onClose}>
           <CloseIcon />
         </IconButton>
       </DialogTitle>
-      <DialogContent>
-        <AboutDialogContent />
-      </DialogContent>
+      <DialogContent>{children}</DialogContent>
     </Dialog>
   );
 }

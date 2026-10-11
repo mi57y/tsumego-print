@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link, Stack, Typography } from "@mui/material";
+import { Button, Link, Stack, Typography } from "@mui/material";
 import { collectionsApi, type CollectionEntry } from "../../ogs/ogsApi";
 import CollectionsTable, { PAGE_SIZE } from "./CollectionsTable";
 import CollectionsSearchForm from "./CollectionsSearchForm";
 import SgfUploadForm from "./SgfUploadForm";
+import FormatInfoDialog from "./FormatInfoDialog";
 import Section from "../../components/Section";
 
 const ORDERING_FIELDS = ["name", "owner__username", "puzzle_count", "rating"];
@@ -27,6 +28,7 @@ export default function CollectionsBrowser({
   const [loading, setLoading] = useState(false);
   const [recommended, setRecommended] = useState<CollectionEntry[]>();
   const [recommendedLoading, setRecommendedLoading] = useState(false);
+  const [formatInfoOpen, setFormatInfoOpen] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -96,8 +98,23 @@ export default function CollectionsBrowser({
           progressPending={recommendedLoading}
         />
       </Section>
-      <Section title="...or upload an SGF file...">
+      <Section
+        title="...or upload an SGF file..."
+        action={
+          <Button
+            variant="outlined"
+            size="small"
+            onClick={() => setFormatInfoOpen(true)}
+          >
+            Format info
+          </Button>
+        }
+      >
         <SgfUploadForm onUpload={onUpload} />
+        <FormatInfoDialog
+          open={formatInfoOpen}
+          onClose={() => setFormatInfoOpen(false)}
+        />
       </Section>
       <Section title="...or search OGS">
         <CollectionsSearchForm

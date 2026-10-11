@@ -15,7 +15,7 @@ export default function SgfUploadForm({
     } catch (err) {
       const message = err instanceof Error ? err.message : String(err);
       setError(
-        `Failed to parse the file.\nCheck the "About" section for details on the expected file format.\nError: ${message}`,
+        `Failed to parse the file.\nCheck "Format info" for details on the expected file format.\nError: ${message}`,
       );
     }
   }
