@@ -13,7 +13,7 @@ function diagramCall(
   subheading: string,
   figure: GnosFigure,
 ): string {
-  return `\\puzzleDiagram{${title}}{${subheading}}{${figure.diagram}}{${figure.description}}`;
+  return `\\puzzleDiagram\n{${title}}\n{${subheading}}\n{%\n${figure.diagram}%\n}\n{${figure.description}}`;
 }
 
 function toPlayLabel(outputs: GnosOutputs): string {
@@ -155,8 +155,21 @@ export function assembleTexDocument(
   // fix-cm lets text use any font size, not only Computer Modern's design sizes.
   return `\\documentclass[${paperSize}]{article}
 \\usepackage{fix-cm,color,gnos,adjustbox}
-${puzzleTexCommands(fontSizePt, diagramSizePt)}${geometryPreamble}${footerPreamble}${packages}
-\\begin{document}${title}${sectionBody(problemBlocks, columns)}${solutionsSection}
+${puzzleTexCommands(fontSizePt, diagramSizePt)}
+
+${geometryPreamble}
+
+${footerPreamble}
+
+${packages}
+
+\\begin{document}
+
+${title}
+
+${sectionBody(problemBlocks, columns)}
+
+${solutionsSection}
 
 \\end{document}
 `;
