@@ -39,6 +39,7 @@
               root = ./.;
               fileset = lib.fileset.unions [
                 ./src
+                ./public/favicon.ico
                 ./index.html
                 ./package.json
                 ./package-lock.json
